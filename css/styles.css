@@ -74,11 +74,11 @@ select {
 }
 body {
   min-height: 100vh;
-  display: grid;
+  /*display: grid;
   grid-template-rows: auto 15%;
   place-items: center;
   align-items: end;
-  gap: 1rem;
+  gap: 1rem;*/
   padding: 10rem 1.5rem;
   font-size: 0.75rem;
   font-family: "Kumbh Sans", sans-serif;
@@ -87,7 +87,7 @@ body {
 
 @media (min-width: 600px) {
   body {
-    padding: 0 7rem;
+    padding: 10rem 18.3rem;
   }
 }
 .grid-flow {
@@ -102,7 +102,7 @@ body {
   background-image: url("../images/bg-pattern-mobile.svg");
   background-position: center top;
   background-repeat: no-repeat;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 4rem;
 }
 
 @media (min-width: 600px) {
@@ -112,11 +112,11 @@ body {
     background-repeat: no-repeat, no-repeat;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 80%;
+    max-width: 150rem;
+    padding: 4rem;
   }
 }
 .image-container {
@@ -142,6 +142,8 @@ body {
   .faq-container {
     grid-column: 2;
     width: 80%;
+    gap: 2rem;
+    padding: 1rem;
   }
 }
 .faq-title {
@@ -200,6 +202,7 @@ details[open] summary {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .attribution a {
