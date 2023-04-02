@@ -121,6 +121,7 @@ details[open] summary {
 .question {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .question::marker {
@@ -130,6 +131,11 @@ details[open] summary {
 .question::after {
     content: url('../images/icon-arrow-down.svg');
 }
+
+.question:hover {
+    color: $Text_soft_red;
+}
+
 .answer {
     color: $Text_dark_grayish_blue;
     margin-top: 0.5rem;

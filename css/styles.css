@@ -178,6 +178,7 @@ details[open] summary {
 .question {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .question::marker {
@@ -186,6 +187,10 @@ details[open] summary {
 
 .question::after {
   content: url("../images/icon-arrow-down.svg");
+}
+
+.question:hover {
+  color: hsl(14, 88%, 65%);
 }
 
 .answer {
