@@ -9,8 +9,8 @@ $Text_dark_grayish_blue: hsl(240, 6%, 50%);
 $Dividers_light_grayish_blue: hsl(240, 5%, 91%);
 
 body {
+  margin: 0;
   min-height: 100vh;
-  padding: 10rem 1.5rem;
   font-size: 0.75rem;
   font-family: "Kumbh Sans", sans-serif;
   background: linear-gradient(
@@ -31,70 +31,127 @@ body {
   gap: 1rem;
 }
 
+.image {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* MAIN */
+
+.main-container {
+    min-height: 100vh;
+    max-width: 63.75rem;
+    margin: 0 auto;
+}
+
+.faq-container {
+  position: relative;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .faq-container {
+    width: 80%;
+  }
+}
+
+.box-image-container {
+  display: none;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .box-image-container {
+    display: block;
+    position: absolute;
+    left: -5.8125rem;
+    top: 12.75rem;
+    z-index: 3;
+  }
+}
+
 .card {
   border-radius: 1.5rem;
   background: white;
   background-image: url("../images/bg-pattern-mobile.svg");
   background-position: center top;
   background-repeat: no-repeat;
-  padding: 1.5rem 1.5rem 4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1.875rem 1.875rem -0.625rem;
+  position: relative;
+  margin-top: 6.5625rem;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 62.5rem) {
   .card {
-    background-image: url("../images/illustration-woman-online-desktop.svg"),
-      url("../images/bg-pattern-desktop.svg");
-    background-position: -18.5% 47%, -35rem -20rem;
-    background-repeat: no-repeat, no-repeat;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    justify-content: center;
-    align-items: center;
-    max-width: 150rem;
-    padding: 4rem;
+    overflow: hidden;
+    margin-top: 0;
+    width: 55rem;
   }
 }
 
-.image-container {
-  position: relative;
-}
-
-.image-container:first-child {
+.faq-illustration,
+.faq-background-pattern {
   position: absolute;
-  width: 15rem;
-  top: 3rem;
-  left: 4.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14.75rem;
 }
 
 @media screen and (min-width: 62.5rem) {
-  .image-container:first-child {
-    position: absolute;
-    width: 15rem;
-    top: 20rem;
-    left: 12.5rem;
+  .faq-illustration,
+  .faq-background-pattern {
+    transform: none;
   }
 }
 
+.faq-illustration {
+  top: -6.625rem;
+  z-index: 2;
+}
+
 @media screen and (min-width: 62.5rem) {
-  .faq-container {
-    grid-column: 2;
-    width: 80%;
-    gap: 2rem;
-    padding: 1rem;
+  .faq-illustration {
+    left: -5.25rem;
+    top: 4.375rem;
+    width: 52%;
+  }
+}
+
+.faq-background-pattern {
+  top: 0;
+  z-index: 0;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .faq-background-pattern {
+    left: -33.125rem;
+    top: -16.4375rem;
+    width: 100%;
+  }
+}
+
+.faq-content {
+  padding: 8rem 1.5rem 3rem 1.5rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .faq-content {
+    margin-left: auto;
+    padding: 2rem 3rem 5rem 0.5rem;
+    width: 50%;
   }
 }
 
 .faq-title {
   text-align: center;
   font-size: 2rem;
-  margin-top: 6rem;
+  margin: 1.5rem 0;
 }
 
 @media screen and (min-width: 62.5rem) {
   .faq-title {
     text-align: left;
-    margin-top: 0;
   }
 }
 
@@ -102,23 +159,31 @@ body {
   gap: 0.5rem;
 }
 
-details[open] summary {
+.item[open] .question {
   color: $Text_very_dark_desaturated_blue;
   font-weight: 700;
 }
 
 .item {
-  grid-template-columns: 90% 10%;
-  grid-template-rows: auto auto;
-  gap: 0.5rem;
-  align-items: center;
+  display: block;
+  padding: 0.9375rem 0;
   font-size: 0.8rem;
+  border-bottom: 0.083rem solid $Dividers_light_grayish_blue;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .item {
+    padding: 0.9375rem 0.9375rem 0.9375rem 0;
+  }
 }
 
 .question {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  font-size: 0.875rem;
+  list-style: none;
 }
 
 .question::marker {
@@ -135,14 +200,12 @@ details[open] summary {
 
 .answer {
   color: $Text_dark_grayish_blue;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0 0.1875rem;
+  padding-right: 1.25rem;
   font-size: 0.7rem;
 }
 
-.line-break {
-  width: 100%;
-  opacity: 0.2;
-}
+/* CONTENTINFO */
 
 .attribution {
   font-size: 0.917rem;
